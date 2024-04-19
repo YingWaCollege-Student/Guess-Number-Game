@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number!</title>
+</head>
+<body>
+    <div class="main_container">
+        <p id="gs">Guessed times: 0</p>
+        <p id="range">0 to 100! Guess below!</p>
+        <input id="num_input" type="number" min="0" max="100" maxlength="3" minlength="1" autofocus required autocomplete="off">
+        <br>
+        <button onClick="guess()" id="guess_btn">Guess!</button>
+    </div>
+    <style>
+            * {
+        margin: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        text-align: center;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        vertical-align: center;
+        align-self: center;
+        align-content: center;
+        justify-items: center;
+        justify-self: center;
+    }
+
+    .main_container {
+        border-radius: 75px;
+        border-width: 2px;
+        border-style: solid;
+        height: fit-content;
+        width: fit-content;
+        padding: 100 200;
+        box-shadow: gray 5px 5px;
+        background-color: lightgray;
+        border-width: 0px;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    p {
+        margin-top: 20px;
+    }
+
+    #num_input {
+        width: 400px;
+        height: 350px;
+        margin: 20px;
+        border-radius: 30px;
+        box-shadow: gray 5px 5px;
+        background-color: white;
+        text-align: center;
+        border-width: 0px;
+        font-size: 100px;
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+
+    #guess_btn {
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: gray 5px 5px;
+        background-color: white;
+        border-width: 0px;
+        width: 100px;
+        height: 40px;
+        margin-bottom: 20px;
+    }
+
+    #guess_btn:active {
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: gray 1px 1px;
+        background-color: white;
+        border-width: 0px;
+        width: 100px;
+        height: 40px;
+        margin-bottom: 20px;
+    }
+    </style>
+    <script>
+        var num = Math.floor(Math.random() * 100);
+        var min_num = 0;
+        var max_num = 100;
+        var range = document.getElementById("range");
+        var guess_times = 0;
+        var guessed_times = document.getElementById("gs");
+
+        function guess() {
+            let input = parseInt(document.getElementById("num_input").value);
+            if (input == num) {
+                var confirmed = confirm(`Congratulations! You have won the game! Play again? 
+Total guessed times: ${guess_times}`);
+                if (confirmed == true) {
+                    window.location.reload();
+                }
+            } else if (input < num && input < 100 && input < max_num && input > min_num) {
+                min_num = input;
+                range.textContent = `${min_num} to ${max_num}! Guess again!`;
+                guess_times ++;
+                guessed_times.textContent = `Guessed times: ${guess_times}`;
+            } else if (input > num && input < 100 && input < max_num && input > min_num) {
+                max_num = input;
+                range.textContent = `${min_num} to ${max_num}! Guess again!`;
+                guess_times ++;
+                guessed_times.textContent = `Guessed times: ${guess_times}`;
+            } else {
+                range.textContent = `${min_num} to ${max_num}! Invalid number!`;
+            }
+        }
+    </script>
+</body>
+</html>
