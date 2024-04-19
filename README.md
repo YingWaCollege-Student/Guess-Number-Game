@@ -1,2 +1,2 @@
-# guessnumber.github.io
+# Guess Number Game
 Guess number game
