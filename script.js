@@ -13,12 +13,12 @@ Total guessed times: ${guess_times}`);
         if (confirmed == true) {
             window.location.reload();
         }
-    } else if (input < num && input < 100 && input < max_num && input > min_num) {
+    } else if (input < num && input <= 100 && input < max_num && input > min_num) {
         min_num = input;
         range.textContent = `${min_num} to ${max_num}! Guess again!`;
         guess_times ++;
         guessed_times.textContent = `Guessed times: ${guess_times}`;
-    } else if (input > num && input < 100 && input < max_num && input > min_num) {
+    } else if (input > num && input <= 100 && input < max_num && input > min_num) {
         max_num = input;
         range.textContent = `${min_num} to ${max_num}! Guess again!`;
         guess_times ++;
