@@ -8,8 +8,9 @@ var guessed_times = document.getElementById("gs"); // Get text element showing g
 function guess() { // Function to process user input, triggered after button pressed or enter key pressed
     let input = parseInt(document.getElementById("num_input").value); // Get input value
     if (input == num) { // Winning case
-        var confirmed = confirm(`Congratulations! You have won the game! Play again? 
-Total guessed times: ${guess_times}`);
+        jQuery($( function() {
+            $( "#dialog" ).dialog();
+          } ));
         if (confirmed == true) {
             window.location.reload(); // Restart game
         }
