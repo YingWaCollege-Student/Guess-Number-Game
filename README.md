@@ -1,5 +1,5 @@
 # Guess Number Game 
-(*Work in Progress*)
+*(Work in Progress)*
 
 ## Introduction
 - Simple number guessing game
