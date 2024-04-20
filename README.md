@@ -6,10 +6,5 @@
 
 ## Guide:
 - Number ranges between 0 and 100.
-- Input numbers in the range.
-- Then press the guess button.
-
-## Roadmap:
-- More number ranges options.
-- Starting interface.
-- Optimised styling and design.
+- Type numbers or use the arrows to chooose numbers in the textbox to guess.
+- Then press the guess button or press the enter key on your keyboard.
