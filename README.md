@@ -1,2 +1,1 @@
-# Guess Number Game
-Guess number game
+#A simple number guessing game created with vanilla HTML, CSS and JS.
